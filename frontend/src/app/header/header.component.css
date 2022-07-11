@@ -1,0 +1,42 @@
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px 30px;
+  background-color: rgba(0, 0, 0, .3);
+  color: #222;
+  font-weight: bold;
+}
+
+.logo {
+  width: 360px;
+}
+
+a {
+  color: #222;
+  align-self: center;
+}
+
+img {
+  align-self: center;
+  width: 100%;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+li {
+  display: flex;
+  width: 120px;
+  align-content: center;
+}
+
+li:hover {
+  font-size: 22px;
+}
+
+em {
+  margin-left: 10px;
+}

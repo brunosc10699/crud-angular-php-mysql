@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.content {
+  width: 100%;
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap-reverse;
+}
+
+.text {
+  width: 640px;
+}
+
+.image {
+  width: 640px;
+}
+
+img {
+  width: 100%;
+}
+
+@media only screen and (max-width: 1339px) {
+  .title {
+    display: flex;
+    justify-content: center;
+  }
+  .text {
+    width: 100%;
+  }
+  .text h2 {
+    text-align: center;
+  }
+}

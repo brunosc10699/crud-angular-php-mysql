@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+}
+
+.image {
+  width: 300px;
+  padding-right: 10px;
+}
+
+img {
+  width: 100%;
+}
+
+.message {
+  text-align: center;
+  padding-left: 10px;
+}

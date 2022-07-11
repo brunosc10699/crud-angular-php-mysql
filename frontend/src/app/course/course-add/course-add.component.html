@@ -1,0 +1,59 @@
+<section class="container">
+  <div class="content">
+    <h2>Novo Curso</h2>
+    <form class="form" [formGroup]="insertForm" (ngSubmit)="insert()">
+      <div class="field">
+        <label class="course-name" for="courseName">Curso</label>
+        <input
+          type="text"
+          placeholder="Nome do Curso"
+          maxlength="50"
+          [(ngModel)]="courseName"
+          formControlName="courseName"
+          [class.valid]="insertForm.controls['courseName'].valid"
+          [class.invalid]="insertForm.controls['courseName'].invalid &&
+            (insertForm.controls['courseName'].touched || insertForm.controls['courseName'].dirty)"
+        />
+        <div class="error-message"
+          *ngIf="insertForm.controls['courseName'].invalid &&
+          (insertForm.controls['courseName'].touched || insertForm.controls['courseName'].dirty)"
+        >
+          <small *ngIf="insertForm.controls['courseName'].hasError('minlength')">
+            O campo, acima, deve ter pelo menos 4 caracteres!
+          </small>
+          <small *ngIf="insertForm.controls['courseName'].hasError('required')">
+            O preenchimento do campo, acima, é requerido!
+          </small>
+        </div>
+      </div>
+      <div class="field">
+        <label class="course-price" for="coursePrice">Preço</label>
+        <input
+          type="number"
+          min="0"
+          placeholder="Preço do Curso"
+          [(ngModel)]="coursePrice"
+          formControlName="coursePrice"
+          [class.valid]="insertForm.controls['coursePrice'].valid"
+          [class.invalid]="insertForm.controls['coursePrice'].invalid &&
+            (insertForm.controls['coursePrice'].touched || insertForm.controls['coursePrice'].dirty)"
+        />
+        <div class="error-message"
+          *ngIf="insertForm.controls['coursePrice'].invalid &&
+          (insertForm.controls['coursePrice'].touched || insertForm.controls['coursePrice'].dirty)"
+        >
+          <small *ngIf="insertForm.controls['coursePrice'].hasError('required')">
+            Digite o preço do curso no campo acima!
+          </small>
+          <small *ngIf="insertForm.controls['coursePrice'].hasError('min')">
+            O preço mínimo do curso é de R$ 1,00!
+          </small>
+        </div>
+      </div>
+      <div class="buttons">
+        <button type="submit" [disabled]="insertForm.invalid">Cadastrar</button>
+        <button routerLink="/list">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,57 @@
+<section class="container">
+  <div class="content">
+    <h2>Atualizar Curso</h2>
+    <form class="form" [formGroup]="updateForm" (ngSubmit)="update()">
+      <div class="field">
+        <label class="course-name" for="courseName">Curso</label>
+        <input
+          type="text"
+          placeholder="Nome do Curso"
+          maxlength="50"
+          formControlName="courseName"
+          [class.valid]="updateForm.controls['courseName'].valid"
+          [class.invalid]="updateForm.controls['courseName'].invalid &&
+            (updateForm.controls['courseName'].touched || updateForm.controls['courseName'].dirty)"
+        />
+        <div class="error-message"
+          *ngIf="updateForm.controls['courseName'].invalid &&
+          (updateForm.controls['courseName'].touched || updateForm.controls['courseName'].dirty)"
+        >
+          <small *ngIf="updateForm.controls['courseName'].hasError('minlength')">
+            O campo, acima, deve ter pelo menos 4 caracteres!
+          </small>
+          <small *ngIf="updateForm.controls['courseName'].hasError('required')">
+            O preenchimento do campo, acima, é requerido!
+          </small>
+        </div>
+      </div>
+      <div class="field">
+        <label class="course-price" for="coursePrice">Preço</label>
+        <input
+          type="number"
+          min="0"
+          placeholder="Preço do Curso"
+          formControlName="coursePrice"
+          [class.valid]="updateForm.controls['coursePrice'].valid"
+          [class.invalid]="updateForm.controls['coursePrice'].invalid &&
+            (updateForm.controls['coursePrice'].touched || updateForm.controls['coursePrice'].dirty)"
+        />
+        <div class="error-message"
+          *ngIf="updateForm.controls['coursePrice'].invalid &&
+          (updateForm.controls['coursePrice'].touched || updateForm.controls['coursePrice'].dirty)"
+        >
+          <small *ngIf="updateForm.controls['coursePrice'].hasError('required')">
+            Digite o preço do curso no campo acima!
+          </small>
+          <small *ngIf="updateForm.controls['coursePrice'].hasError('min')">
+            O preço mínimo do curso é de R$ 1,00!
+          </small>
+        </div>
+      </div>
+      <div class="buttons">
+        <button type="submit" [disabled]="updateForm.invalid">Atualizar</button>
+        <button routerLink="/list">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</section>

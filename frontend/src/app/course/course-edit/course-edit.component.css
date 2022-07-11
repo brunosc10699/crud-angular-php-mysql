@@ -1,0 +1,62 @@
+.content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.course-name,
+.course-price {
+  font-size: 18px;
+}
+
+input {
+  width: 360px;
+  padding: 5px 10px;
+  font-size: 16px;
+  margin-top: 5px;
+  margin-bottom: 1px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.error-message {
+  background-color: red;
+  padding: 10px 10px 10px 0;
+  text-align: right;
+  margin-bottom: 10px;
+  width: 375px;
+}
+
+.error-message small {
+  color: white;
+  font-weight: bold;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.buttons button {
+  margin: 0 10px;
+  width: 120px;
+  height: 40px;
+  font-size: 16px;
+}

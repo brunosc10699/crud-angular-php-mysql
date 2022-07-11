@@ -1,0 +1,39 @@
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px 0 10px 0;
+  background-color: rgba(0, 0, 0, .5);
+  font-weight: bold;
+
+}
+
+small {
+  align-self: center;
+  color: white;
+  margin: 0 20px;
+
+}
+
+nav {
+  margin: 0 20px;
+
+}
+
+a, a:visited, a:hover {
+  color: white;
+}
+
+ul {
+  display: flex;
+  /* margin: 20px 50px; */
+
+}
+
+li {
+  margin: 0 10px;
+}
+
+em {
+  font-size: 30px;
+}
